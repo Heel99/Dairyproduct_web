@@ -1,0 +1,118 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.view-all {
+  color: #555;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.category-cards,
+.brands-cards {
+  display: flex;
+  gap: 15px;
+  margin: 20px;
+  overflow-x: auto;
+}
+
+.card,
+.brand-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 15px;
+  min-width: 150px;
+}
+
+.card .icon {
+  display: block;
+  margin: 0 auto 10px;
+  font-size: 24px;
+  color: #f4a261;
+}
+
+.brand-card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.brand-info {
+  padding: 10px 0;
+}
+
+.brand-info h3 {
+  font-size: 16px;
+  margin: 5px 0;
+}
+
+.brand-info p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+.scroll-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  margin: 20px;
+}
+
+.scroll-btn {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-btn:hover {
+  background-color: #f0f0f0;
+}
+
+.scroll-content {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  margin: 0 10px;
+  flex: 1;
+}
+
+.scroll-content::-webkit-scrollbar {
+  display: none;
+}
+
+.item {
+  min-width: 150px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}

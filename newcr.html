@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .maincontainer {
+    display: flex;
+    padding-top: 50px;
+    transition: transform 0.3s ease;
+}
+
+.card {
+    margin-right: 20px;
+    transition: transform 0.3s ease;
+}
+
+.card1Detail {
+    display: none;
+    position: absolute;
+    left: 330px;
+    top: 60px;
+    transition: opacity 0.3s ease;
+}
+
+.card1Detail p {
+    font-size: 25px;
+    color: black;
+}
+
+.card1Detail button {
+    padding: 10px 15px;
+    color: white;
+    background-color: red;
+}
+
+.card1img {
+    height: 300px;
+    width: 300px;
+    border-bottom: 5px solid rgb(190, 88, 190);
+    transition: all 0.3s ease;
+    position: relative;
+    transform: scale(0.8); /* Start with smaller size for other images */
+}
+
+.card1img img {
+    height: 100%;
+    width: 100%;
+}
+
+.scroll-content {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    margin: 0 10px;
+    flex: 1;
+    position: relative;
+    padding-top: 200px;
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin: 20px;
+}
+
+.scroll-content::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbtn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.leftb {
+    left: 0;
+}
+
+.rightb {
+    right: 0;
+}
+
+.card1img.active {
+    transform: scale(1); 
+    /* height: 350px;
+    transition: 2s ease-out; */
+}
+
+.card1Detail.active {
+    display: block;
+    opacity: 1;
+}
+
+.card1img.inactive {
+    transform: scale(0.8); /* Smaller size for inactive images */
+}
+
+.card1Detail.inactive {
+    display: none;
+    opacity: 0;
+}
+
+</style>
+<body>
+    
+    <button class="scrollbtn leftb" onclick="scrollbtnleft()" aria-label="Scroll left">&lt;</button>
+<button class="scrollbtn rightb" onclick="scrollbtnright()" aria-label="Scroll right">&gt;</button>
+
+<div class="scroll-content">
+    <div class="maincontainer">
+        <div class="card">
+            <div class="card1img active" id="card1">
+                <img src="./images/EXPLO-img_1479.jpg" alt="img" id="smallimg1">
+            </div>
+            <div class="card1Detail active" id="card1Detail1">
+                <h3>EXPLORE SAUDI ARABIA in 07 DAYS</h3>
+                <p>Explore Best Head Points of Saudi Arabia for 07 days.</p>
+                <button>view tour</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card1img inactive" id="card2">
+                <img src="./images/EXPLO-img_1479.jpg" alt="img" id="smallimg2">
+            </div>
+            <div class="card1Detail inactive" id="card1Detail2">
+                <h3>Heeeeeeeeeeellllllll</h3>
+                <p>Explore Best Head Points of Saudi Arabia for 07 days.</p>
+                <button>view tour</button>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card1img inactive" id="card3">
+                <img src="./images/scroll3.jpg" alt="img" id="smallimg3">
+            </div>
+            <div class="card1Detail inactive" id="card1Detail3">
+                <h3>hjbfhrjkcfnklsdm</h3>
+                <p>Explore Bnkslfjcmsdl;c ints of Saudi Arabia for 07 days.</p>
+                <button>view tour</button>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card1img inactive" id="card4">
+                <img src="./images/EXPLO-img_1479.jpg" alt="img" id="smallimg4">
+            </div>
+            <div class="card1Detail inactive" id="card1Detail4">
+                <h3>carrrrrrrrrrrrddd4</h3>
+                <p>Explore Best Head Points of Saudi Arabia for 07 days.</p>
+                <button>view tour</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+ let currentIndex = 0;  // Track the currently active image
+
+function scrollbtnleft() {
+    if (currentIndex > 0) {
+        currentIndex--;
+        updateActiveState();
+        scrollbtnlefts1();  // Scroll smoothly to the left
+    }
+}
+
+function scrollbtnright() {
+    const totalCards = document.querySelectorAll('.card').length;
+    if (currentIndex < totalCards - 1) {
+        currentIndex++;
+        updateActiveState();
+        scrollbtnrights1();  // Scroll smoothly to the right
+    }
+}
+
+function updateActiveState() {
+    const cards = document.querySelectorAll('.card');
+    
+    // Reset all cards to inactive
+    cards.forEach((card, index) => {
+        const img = card.querySelector('.card1img');
+        const detail = card.querySelector('.card1Detail');
+        if (index === currentIndex) {
+            img.classList.add('active');
+            img.classList.remove('inactive');
+            detail.classList.add('active');
+            detail.classList.remove('inactive');
+        } else {
+            img.classList.add('inactive');
+            img.classList.remove('active');
+            detail.classList.add('inactive');
+            detail.classList.remove('active');
+        }
+    });
+
+    // Scroll the view to the active card
+    const activeCard = cards[currentIndex];
+    const scrollContainer = document.querySelector('.scroll-content');
+    scrollContainer.scrollTo({
+        left: activeCard.offsetLeft - (scrollContainer.offsetWidth - activeCard.offsetWidth) / 2,
+        behavior: 'smooth'
+    });
+}
+
+// This function scrolls the container to the left
+function scrollbtnlefts1() {
+    const container = document.querySelector('.scroll-content');
+    if (container) {
+        container.scrollBy({ left: -600, behavior: 'smooth' });
+    }
+}
+
+// This function scrolls the container to the right
+function scrollbtnrights1() {
+    const container = document.querySelector('.scroll-content');
+    if (container) {
+        container.scrollBy({ left: 200, behavior: 'smooth' });
+    }
+}
+
+</script>
+
+</body>
+</html>

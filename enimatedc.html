@@ -1,0 +1,179 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .gallery {
+      width: 100%;
+      background: linear-gradient(180deg, rgb(236, 213, 232) 0%, rgb(50, 112, 118) 100%);
+    }
+    .gallery-container {
+      align-items: center;
+      display: flex;
+      height: 400px;
+      margin: 0 auto;
+      max-width: 1000px;
+      position: relative;
+    }
+    .gallery-item {
+      height: 200px;
+      opacity: 0;
+      position: absolute;
+      transition: all 0.3s ease-in-out;
+      width: 320px;
+      z-index: 0;
+      border-radius: 15px;
+      background-size: contain;
+    }
+    .gallery-item-1 {
+      left: 15%;
+      opacity: .4;
+      transform: translateX(-50%);
+    }
+    .gallery-item-5 {
+      left: 85%;
+      opacity: .4;
+      transform: translateX(-50%);
+    }
+    .gallery-item-2, .gallery-item-4 {
+      height: 250px;
+      opacity: 0.8;
+      width: 380px;
+      z-index: 1;
+    }
+    .gallery-item-2 {
+      left: 30%;
+      transform: translateX(-50%);
+    }
+    .gallery-item-3 {
+      box-shadow: -2px 5px 33px 6px, rgba(0, 0, 0, 0.35);
+      height: 300px;
+      opacity: 1;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 430px;
+      z-index: 2;
+    }
+    .gallery-item-4 {
+      left: 70%;
+      transform: translateX(-50%);
+    }
+    .gallery-controls {
+      display: flex;
+      justify-content: center;
+      margin: 25px 0;
+      height: 100px;
+    }
+    .gallery-controls button {
+      background-color: transparent;
+      border: 0;
+      cursor: pointer;
+      font-size: 30px;
+      margin: 0 50px;
+      padding: 0 12px;
+      text-transform: capitalize;
+    }
+    .gallery-controls button:focus {
+      outline: none;
+    }
+    .gallery-controls-previous {
+      position: relative;
+    }
+    .gallery-controls-previous::before {
+      content: '';
+      border: solid #000;
+      border-width: 0 5px 5px 0;
+      height: 25px;
+      left: -50px;
+      padding: 10;
+      position: absolute;
+      top: 25px;
+      transform: rotate(135deg) translateY(-50%);
+      transition: left 0.15s ease-in-out;
+      width: 25px;
+    }
+    .gallery-controls-previous:hover::before {
+      left: -40px;
+    }
+    .gallery-controls-next {
+      position: relative;
+    }
+    .gallery-controls-next::before {
+      content: '';
+      display: inline-flex;
+      border: solid #000;
+      height: 5px;
+      padding: 10px;
+      position: absolute;
+      right: -30px;
+      top: 45px;
+      border-width: 0 5px 5px 0;
+      transform: rotate(-45deg) translate(50%);
+      transition: right 0.15s ease-in-out;
+      width: 5px;
+    }
+    .gallery-controls-next:hover::before {
+      right: -40px;
+    }
+    .gallery-nav {
+      bottom: -15px;
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      padding: 0;
+      position: absolute;
+      width: 100%;
+    }
+    .gallery-nav li {
+      background: #ccc;
+      border-radius: 50%;
+      height: 10px;
+      width: 10px;
+      margin: 0 16px;
+      cursor: pointer;
+    }
+    .gallery-nav li.gallery-item-selected {
+      background: #555;
+    }
+    .gallery-nav li:hover {
+      background: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="gallery">
+    <div class="gallery-container">
+      <img class="gallery-item gallery-item-1" src="./images/blogcard2.jpg" data-index="1" alt="Image 1">
+      <img class="gallery-item gallery-item-2" src="./images/blogcard3.jpg" data-index="2" alt="Image 2">
+      <img class="gallery-item gallery-item-3" src="./images/newbrandf.jpg" data-index="3" alt="Image 3">
+      <img class="gallery-item gallery-item-4" src="./images/newbrandt.jpg" data-index="4" alt="Image 4">
+      <img class="gallery-item gallery-item-5" src="./images/scroll3.jpg" data-index="5" alt="Image 5">
+    </div>
+    <div class="gallery-controls">
+      <button type="button" class="gallery-controls-previous button">Previous</button>
+      <button type="button" class="gallery-controls-next button">Next</button>
+    </div>
+    <ul class="gallery-nav">
+      <li class="gallery-item-selected"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+  <script src="./enimated.js"></script>
+</body>
+</html>
+

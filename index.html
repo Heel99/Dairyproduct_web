@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <title>DairyProduct</title>
+    <link rel="stylesheet" href="dairyproduct.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ====custom-fonts===== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Rufina:wght@400;700&display=swap" rel="stylesheet">
+
+  
+  </head>
+  <body>
+      <div class="upsidearrow">
+      <a href='#top'><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="80" height="80" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><circle cx="256" cy="256" r="256" fill="url(#a)" fill-rule="evenodd" clip-rule="evenodd" opacity="1" data-original="url(#a)" class=""></circle><linearGradient id="a" x1="256.05" x2="256.05" y1="512.34" y2=".34" gradientTransform="matrix(1 0 0 -1 0 512.39)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#f704fe"></stop><stop offset="1" stop-color="#24bce3"></stop></linearGradient><path fill="#fffffe" fill-rule="evenodd" d="M222.6 207.1c1.8 0 3.6.6 5 1.7 2 1.5 3.1 3.9 3.1 6.4v178c0 3.5 2.9 6.4 6.4 6.4h38c3.5 0 6.4-2.9 6.4-6.4v-178c0-2.5 1.1-4.8 3.1-6.4 2-1.5 4.5-2.1 6.9-1.5l38.1 9.1c3.3.8 5.7-1 6.9-2.9s1.7-4.8-.5-7.5l-75-91.2c-1.2-1.5-3-2.3-5-2.3-1.9 0-3.7.9-5 2.3L176 206c-2.2 2.6-1.7 5.6-.5 7.5s3.6 3.6 6.9 2.9l38.1-9.1c.7-.2 1.4-.2 2.1-.2zM275 406h-38c-7.2 0-13-5.8-13-13V215c0-.7-.4-1.1-.6-1.2-.2-.2-.7-.5-1.3-.3l-38.1 9.1c-5.5 1.3-11-.9-14-5.8-3-4.8-2.6-10.7 1-15.1l75-91.2c2.5-3 6.1-4.7 10-4.7s7.5 1.7 10 4.7l75 91.2c3.6 4.4 4 10.3 1 15.1s-8.5 7.1-14 5.8l-38.1-9.1c-.7-.2-1.1.1-1.3.3s-.6.6-.6 1.2v178c0 7.2-5.9 13-13 13z" clip-rule="evenodd" opacity="1" data-original="#fffffe" class=""></path></g></svg></a> </div> 
+
+
+    <header>
+      <div class="wrapper ">
+
+      <nav>
+        <div class="logo">
+          <img src="images/logo.png" alt="logo" />
+        </div>
+        <div class="searchDropdown">
+          <!-- Dropdown Menu -->
+          <div class="dropdown">
+            <button class="dropdown-btn">All Categories</button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Groceries</a></li>
+              <li><a class="dropdown-item" href="#">Chocolate</a></li>
+              <li><a class="dropdown-item" href="#">Colddrink</a></li>
+            </ul>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="search-container">
+            <input type="text" class="search-bar" placeholder="Search for more than 2000 products">
+            <button class="search-btn">
+              <i class="search-icon">&#128269;</i> <!-- Unicode for search icon -->
+               </button>
+           </div>
+        </div>
+        <div class="profieinformation">
+          <div class="contact">
+            <h6>For Support?</h6>
+            <h5>+980-34984089</h5>
+          </div>
+          <div class="userprofile">
+            <i class="fa-regular fa-user iconnav"></i>
+          </div>
+          <div class="userprofile">
+            <i class="fa-regular fa-heart iconnav"></i>
+          </div>
+          <div class="cartprize">
+            <button class="border-0 bg-transparent d-flex flex-column gap-2 lh-1" type="button" >
+              <span class="fs-6 text-muted dropdown-toggle">Your Cart</span>
+              <span class="cart-total fs-5 fw-bold">$1290.00</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </div>
+    </header>
+
+      
+        <div class="container">
+        <section>
+          <div class="serchbyCategories">
+          <div class="offcanvas-body">
+              
+            <select class="filter-categories p-2 border-0 mb-0 me-5">
+              <option>Shop by Departments</option>
+              <option>Groceries</option>
+              <option>Drinks</option>
+              <option>Chocolates</option>
+            </select>
+          </div>
+          <div class="navlinks">
+            <a href="#">Women</a>
+            <a href="#">Men</a>
+            <a href="#">Kids</a>
+            <a href="#">Accesories</a>
+            <div class="dropdownnav">
+              <button class="dropbtn">Pages</button>
+                    <div class="dropdown-content">
+                    <a href="#">About us </a>
+                    <a href="#">Shop</a>
+                    <a href="#">single product</a>
+                    <a href="#">cart</a>
+                    <a href="#">Check out</a>
+                    <a href="#">post</a>
+                    <a href="#">single post</a>
+                    <a href="#">style</a>
+                    <a href="#">content</a>
+                    <a href="#">style</a>
+                    <a href="#">Thank You</a>
+                    <a href="#">My Account</a>
+                    </div>
+            </div>
+            <a href="#">Brand</a>
+            <a href="#">sale</a>
+            <a href="#">Blog</a>
+          </div>
+        </div>
+
+<!-- ============================discounnt section==================== -->
+  <div class="wrapper">
+  <section class="discountsec">
+  
+    <div class="leftsec">
+        <div class="leftcontent">
+          <h4>100% natural</h4>
+          <h1>heinz Tometo ketchup</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, exercitationem.</p>
+          <button type="button" class="btn btn-outline-dark">Shop Now</button>
+        </div>
+        <div class="contentimg"><img src="/images/product-thumb-2.png" alt="50%off"></div>
+    </div>
+    <div class="rightsec">
+      <div class="rightTop">
+        <div class="content">
+          <h5>20% off</h5>
+          <div class="sale-text">sale</div>
+          <h3>Fruit And Vegitables</h3>
+          <a href="#" target="_blank">Shop Collection</a>
+          <div class="arrow-right"></div>
+        </div>
+        <div class="image-ad"><img src="/images/ad-image-1.png" alt="image"></div>
+      </div>
+      <div class="rightBottom">
+        <div class="content">
+          <h5>10% off</h5>
+
+         <div class="wraplinetext">
+           <hr class="new1">
+          <!-- <div class="stext">sale</div></div> -->
+          <div class="sale-text t2">sale</div></div>
+
+          <h3>Backed Products</h3>
+          <a href="#" target="_blank">Shop Collection</a>
+          <div class="arrow-right"></div>
+        </div>
+        <div class="image-ad2"><img src="/images/ad-image-2.png" alt="image"></div>
+      </div>
+      </div>
+    </div>  
+</section> </div>
+
+<!-- ======= categories ======= -->
+<section class="categories">
+    <div class="wrapper">
+      <div class="section-header">
+        <h2 class="custom-font">Categories</h2>
+        <div class="section-head-right">
+        <a href="#" class="viewall">View All Categories → </a>
+        <button class="scrollbtn leftb" onclick="scrollbtnleft()" aria-label="Scroll left">&lt;</button>
+        <button class="scrollbtn rightb" onclick="scrollbtnright()" aria-label="Scroll right">&gt;</button>
+      </div>
+    </div>
+    <div class="scroll-content">
+      <div class="category-cards">
+        <div class="card">
+          <span ><i class="fa-solid fa-bread-slice icon"></i></span>
+          <p>Breads And Sweets</p>
+        </div>
+        <div class="card">
+          <span><i class="fa-solid fa-carrot icon"></i></span>
+          <p>Fruits And Vegies</p>
+        </div>
+        <div class="card">
+          <span><i class="fa-solid fa-champagne-glasses icon"></i></span>
+          <p>Soft Drinks</p>
+        </div>
+        <div class="card">
+          <span><i class="fa-solid fa-carrot icon"></i></span>
+          <p>Fruits And Vegies</p>
+        </div>
+        <div class="card">
+          <span><i class="fa-solid fa-mug-saucer icon"></i></span>
+          <p>Frozen foods</p>
+        </div>
+        <div class="card">
+          <span><i class="fa-solid fa-mug-saucer icon"></i></span>
+          <p>Frozen foods</p>
+        </div>
+        <div class="card">
+          <span><i class="fa-solid fa-mug-saucer icon"></i></span>
+          <p>Frozen foods</p>
+        </div>
+        <div class="card">
+          <span><i class="fa-solid fa-mug-saucer icon"></i></span>
+          <p>Frozen foods</p>
+        </div>
+      </div>
+
+    </div>
+
+    </div>  
+</section>
+ <!-- ========= newlyArrive ======= -->
+<section class="newlyArrive">
+  <div class="wrapper">
+    <div class="section-header">
+      <h2 class="custom-font">Newly Arrived Brands</h2>
+      <div class="section-head-right">
+      <a href="#" class="viewall">View All Categories → </a>
+      <button class="scrollbtnNA leftb" onclick="scrollbtnleftNA()" aria-label="Scroll left">&lt;</button>
+      <button class="scrollbtnNA rightb" onclick="scrollbtnrightNA()" aria-label="Scroll right">&gt;</button>
+    </div>
+  </div>
+  <div class="scroll-content2">
+  <div class="category-cards">
+  <div class="brandcard">
+    <div class="cardimg"> <img src="images/newbrand.jpg" alt=""></div>
+    <div class="carddetail">
+      <h5>Amber Jar</h5>
+      <p>honey best nectar you wish to get</p>
+    </div>
+  </div>
+  <div class="brandcard">
+    <div class="cardimg"><img src="images/newbrandf.jpg" alt=""></div>
+    <div class="carddetail">
+      <h5>Amber Jar</h5>
+      <p>honey best nectar you wish to get</p>
+    </div>
+  </div>
+  <div class="brandcard">
+    <div class="cardimg"><img src="images/newbrandt.jpg" alt=""></div>
+    <div class="carddetail">
+      <h5>Amber Jar</h5>
+      <p>honey best nectar you wish to get</p>
+    </div>
+  </div>
+
+  <div class="brandcard">
+    <div class="cardimg"><img src="images/newbrand.jpg" alt=""></div>
+    <div class="carddetail">
+      <h5>Amber Jar</h5>
+      <p>honey best nectar you wish to get</p>
+    </div>
+  </div>
+
+  <div class="brandcard">
+    <div class="cardimg"><img src="images/newbrandf.jpg" alt=""></div>
+    <div class="carddetail">
+      <h5>Amber Jar</h5>
+      <p>honey best nectar you wish to get</p>
+    </div>
+  </div>
+  </div>
+</div>
+  </div>
+</section>
+
+ <!-- ========== trending-Products ======== -->
+<section class="trending-Products">
+  <div class="wrapper">
+    <div class="section-header">
+      <h2 class="custom-font">Trending products</h2>
+      <ul>
+        <li><a href="#">All</a></li>
+        <li><a href="#">Fruits and Vegies</a></li>
+        <li><a href="#">juices</a></li>
+      </ul>
+    </div>
+      <div class="productcards">
+    <div class="productcard">
+      <div class="cardimgsection">
+        <div class="discountlabel">-30%</div>
+        <a href="#" class="btn-wishlist">
+          <i class="fa-regular fa-heart "></i>
+        </a>
+        <img src="images/bananas.png" alt="">
+      </div>
+      <div class="pcardcontent">
+        <h6>Sunstar Fresh Melon Juice
+        </h6>
+        <div class="subpcard">
+          <p>1 Unit</p>
+          <i class="fa-solid fa-star"></i>
+        <p> 4.5</p>
+        </div>
+        <h4>$18.00</h4>
+        <div class="pcardbottom">
+          <div class="inputgroup">
+            <button type="button" class="inputbutton">-</button>
+            <input type="text" id="quantity" name="quantity" class="input-number" value="1" >
+            <button type="button" class="inputbutton">+</button>
+          </div>
+          <!-- <p> Add To Cart</p> -->
+           <button type="button" id="addToCart">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="productcard">
+      <div class="cardimgsection">
+        <div class="discountlabel">-30%</div>
+        <a href="#" class="btn-wishlist">
+          <i class="fa-regular fa-heart "></i>
+        </a>
+        <img src="images/bananas.png" alt="">
+      </div>
+      <div class="pcardcontent">
+        <h6>Sunstar Fresh Melon Juice
+        </h6>
+        <div class="subpcard">
+          <p>1 Unit</p>
+          <i class="fa-solid fa-star"></i>
+        <p> 4.5</p>
+        </div>
+        <h4>$18.00</h4>
+        <div class="pcardbottom">
+          <div class="inputgroup">
+            <button type="button" class="inputbutton">-</button>
+            <input type="text" id="quantity" name="quantity" class="input-number" value="1">
+            <button type="button" class="inputbutton">+</button>
+          </div>
+          <button type="button" id="addToCart">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="productcard">
+      <div class="cardimgsection">
+        <div class="discountlabel">-30%</div>
+        <a href="#" class="btn-wishlist">
+          <i class="fa-regular fa-heart "></i>
+        </a>
+        <img src="images/bananas.png" alt="">
+      </div>
+      <div class="pcardcontent">
+        <h6>Sunstar Fresh Melon Juice
+        </h6>
+        <div class="subpcard">
+          <p>1 Unit</p>
+          <i class="fa-solid fa-star"></i>
+        <p> 4.5</p>
+        </div>
+        <h4>$18.00</h4>
+        <div class="pcardbottom">
+          <div class="inputgroup">
+            <button type="button" class="inputbutton">-</button>
+            <input type="text" id="quantity" name="quantity" class="input-number" value="1">
+            <button type="button" class="inputbutton">+</button>
+          </div>
+          <button type="button" id="addToCart">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="productcard">
+      <div class="cardimgsection">
+        <div class="discountlabel">-30%</div>
+        <a href="#" class="btn-wishlist">
+          <i class="fa-regular fa-heart "></i>
+        </a>
+        <img src="images/bananas.png" alt="">
+      </div>
+      <div class="pcardcontent">
+        <h6>Sunstar Fresh Melon Juice
+        </h6>
+        <div class="subpcard">
+          <p>1 Unit</p>
+          <i class="fa-solid fa-star"></i>
+        <p> 4.5</p>
+        </div>
+        <h4>$18.00</h4>
+        <div class="pcardbottom">
+          <div class="inputgroup">
+            <button type="button" class="inputbutton">-</button>
+            <input type="text" id="quantity" name="quantity" class="input-number" value="1">
+            <button type="button" class="inputbutton">+</button>
+          </div>
+          <button type="button" id="addToCart">Add To Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  </div>
+</section>
+ <!-- ======== custumalert===== -->
+<div id="customAlertBox" class="custom-alert">
+  <div class="custom-alert-content">
+      <span class="close">&times;</span>
+      <p id="alertMessage"><i class="fa-solid fa-cart-shopping"></i>Item added to cart</p>
+      <p id="alertMessageLine2">Quantity: 1</p>
+
+  </div>
+</div>
+
+<!-- ========= designed discount card -->
+
+<section class="designCards">
+  <div class="wrapper">
+    <div class="designmaincard">
+    <div class="dcard_left">
+      <div class="design-details">
+      <h4>Upto 25% off</h4>
+      <h3>Luxa Dark Chocolate</h3>
+      <p>Very testy creamy vanila flavour craemy chocolates.</p>
+      <button type="button" class="button">Show Now</button></div>
+      <div class="designcardimage"><img src="images/designcardleft.png" alt=""></div>
+    </div>
+    <div class="dcard_right">
+      <div class="design-details">
+      <h4>Upto 25% off</h4>
+      <h3>Luxa Dark Chocolate</h3>
+      <p>Very testy creamy vanila flavour craemy chocolates.</p>
+      <button type="button" class="button">Show Now</button></div>
+      <div class="designcardimage"><img src="images/designbanerRight.png" alt=""></div>
+    
+  </div>
+</div>
+</section>
+<!-- =======formdetil======= -->
+
+<section class="firstpurchase-form">
+  <div class="wrapper">
+    <div class="purchase-main">
+  <div class="fpdetail">
+    <h2>Get <span>25% Discount</span> On Your First Purchase</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam commodi optio necessitatibus quas voluptatum nihil eius expedita eligendi inventore corrupti</p>
+  </div>  
+  <div class="formd">
+    <form action="">
+      <div class="form-details">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control" name="name" id="name" placeholder="Name"></div>
+      <div class="form-details">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" name="email" id="email" placeholder="abc@mail.co">
+        <div class="checkdetail">
+          <label for="subscribe"><input class="form-check-input" type="checkbox" id="subscribe" value="subscribe">
+       "Subscribe to the newsletter"</label><br>
+          <button type="submit" class="button">Submit</button>  
+        </div>
+    </form>
+   </div>
+  </div>
+  </div>
+</section>
+
+<!-- ======= Recent Blog ======== -->
+
+<section class="recentBlog">
+  <div class="wrapper">
+    <div class="section-header">
+      <h2 class="custom-font" >Our Resent Blog</h2>
+      <div class="section-head-right">
+      <a href="#" class="viewall">Read All Articles → </a>
+    </div>
+  </div>
+  <div class="blogcards">
+    <div class="Bcard">
+      <div class="bimage">
+        <img src="images/orangcard.jpg" alt="">
+      </div>
+      <div class="imagedetail">
+      <div class="bcarddetail1">
+        <div class="date-triks">22 AUG 2021</div>
+      <div class="date-triks">Tips& tricks</div>
+      </div>
+      
+      <h4>Top 10 Casual Look Ideas To Dress up your Kids</h4> 
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, consequatur hic? Ipsam impedit, id quae excepturi a voluptas fugit delectus.</p>
+    </div>
+    </div>
+
+    <div class="Bcard">
+      <div class="bimage">
+        <img src="images/blogcard2.jpg" alt="">
+      </div>
+      <div class="imagedetail">
+      <div class="bcarddetail1">
+        <div class="date-triks">22 AUG 2021</div>
+      <div class="date-triks">Tips& tricks</div>
+      </div>
+      
+      <h4>Latest trends of wearing street wears supremely</h4> 
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, consequatur hic? Ipsam impedit, id quae excepturi a voluptas fugit delectus.</p>
+    </div>
+    </div>
+
+    <div class="Bcard">
+      <div class="bimage">
+        <img src="images/blogcard3.jpg" alt="">
+      </div>
+      <div class="imagedetail">
+      <div class="bcarddetail1">
+        <div class="date-triks">22 AUG 2021</div>
+      <div class="date-triks">Tips& tricks</div>
+      </div>
+      
+      <h4>10 Different Types of comfortable clothes ideas for women</h4> 
+      <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, consequatur hic? Ipsam impedit, id quae excepturi a voluptas fugit delectus.</p>
+    </div>
+    </div>
+  </div>
+  </div>
+</section>
+
+<!-- ======= app-download ========= -->
+
+<section class="app-download">
+  <div class="wrapper">
+    <div class="appdmain">
+      <div class="appdimage">
+            <img src="images/phone.png" alt="">
+      </div>
+      <div class="appd-content">
+        <h3>Shop faster With Food Mart App</h3>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Soluta quos eum impedit suscipit aspernatur repellat et, unde dignissimos culpa eligendi Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit aliquid similique fuga eaque quisquam cupiditate hic magnam error quis veritatis.
+        </p>
+        <div class="photolinks"><a href="#"><img src="images/app-store.jpg" alt=""></a>
+          <a href="#"><img src="images/google-play.jpg" alt=""></a>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =========people-looking-for======= -->
+<section class="people-looking-for">
+  <div class="wrapper">
+  <div class="section-header">
+    <h2 class="custom-font">People are also looking for</h2>
+   </div>
+<div class="bodylinks">
+  
+  <a href="#" class="externallinks">Blue diamon almonds</a>
+  <a href="#" class="externallinks">Angie’s Boomchickapop Corn</a>
+  <a href="#" class="externallinks">Salty kettle Corn</a>
+  <a href="#" class="externallinks">Chobani Greek Yogurt</a>
+  <a href="#" class="externallinks">Sweet Vanilla Yogurt</a> <br>
+  <a href="#" class="externallinks">Foster Farms Takeout Crispy wings</a>
+  <a href="#" class="externallinks">Warrior Blend Organic</a>
+  <a href="#" class="externallinks">Chao Cheese Creamy</a>
+  <a href="#" class="externallinks">Chicken meatballs</a>
+  <a href="#" class="externallinks">Blue diamon almonds</a> <br>
+  <a href="#" class="externallinks">Angie’s Boomchickapop Corn</a>
+  <a href="#" class="externallinks">Salty kettle Corn</a>
+  <a href="#" class="externallinks">Chobani Greek Yogurt</a>
+  <a href="#" class="externallinks">Sweet Vanilla Yogurt</a>
+  <a href="#" class="externallinks">Foster Farms Takeout Crispy wings</a>
+  <a href="#" class="externallinks">Warrior Blend Organic</a>
+  <a href="#" class="externallinks">Chao Cheese Creamy</a>
+  <a href="#" class="externallinks">Chicken meatballs</a>
+</div>
+</div>
+</section>
+
+
+<!-- ======== befor-footer ======== -->
+<section class="befor-footer">
+  <div class="wrapper">
+    <div class="minicards">
+      <div class="minicard">
+        <div class="minicard-logo">
+          <i class="fa-solid fa-cart-shopping logo-minicard"></i>
+        </div>
+        <div class="minicard-detail">
+          <h5>Free Delivery</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, iste?</p>
+        </div>
+      </div>
+
+      <div class="minicard">
+        <div class="minicard-logo">
+          <i class="fa-solid fa-shield-halved logo-minicard"></i>
+        </div>
+        <div class="minicard-detail">
+          <h5>100% secure Payment</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, iste?</p>
+        </div>
+      </div>
+
+      <div class="minicard">
+        <div class="minicard-logo">
+          <i class="fa-solid fa-cart-shopping logo-minicard"></i>
+        </div>
+        <div class="minicard-detail">
+          <h5>Quality guerenty</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, iste?</p>
+        </div>
+      </div>
+
+      <div class="minicard">
+        <div class="minicard-logo">
+          <i class="fa-solid fa-cart-shopping logo-minicard"></i>
+        </div>
+        <div class="minicard-detail">
+          <h5>Guarented savings</h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, iste?</p>
+        </div>
+      </div>
+      <div class="minicard">
+        <div class="minicard-logo">
+          <i class="fa-solid fa-tags logo-minicard "></i>
+        </div>
+        <div class="minicard-detail">
+          <h5>daily offers </h5>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, iste?</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- =========== footer ========== -->
+<section class="footer">
+   <div class="leftfooter">
+    <div class="footerlogo">
+      <img src="images/logo.png" alt="">
+    </div>
+    <div class="footerlinks">
+        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-amazon"></i></a>
+    </div>
+   </div>
+   <div class="rightfooter">
+    <div class="columns">
+      <h5 class="headingfoo">Ultras</h5>
+      <ul>
+        <li>About Us</li>
+        <li>Conditions</li>
+         <li>Our journals</li> 
+         <li>carrer</li>
+         <li>Affilate programe </li>
+         <li>ultras space</li>
+      </ul>
+    </div>
+
+    <div class="columns">
+      <h5 class="headingfoo">Ultras</h5>
+      <ul>
+        <li>FAQ</li>
+        <li>Contacts</li>
+         <li>Privacy policy</li> 
+         <li>Return & Refund</li>
+         <li>Cookie Guidelines </li>
+         <li>Delivery information</li>
+      </ul>
+    </div>
+    
+    <div class="columns">
+      <h5 class="headingfoo">Customer Service</h5>
+      <ul>
+        <li>FAQ</li>
+        <li>Contacts</li>
+         <li>Privacy policy</li> 
+         <li>Return & Refund</li>
+         <li>Cookie Guidelines </li>
+         <li>Delivery information</li>
+      </ul>
+    </div>
+
+    <div class="columns">
+      <h5 class="headingfoo">Ultras</h5>
+      <ul>
+        <li><p>Subscribe to our newsletter to get updates about our grand offers.</p></li>
+        <li><input class="form-control rounded-start rounded-0 bg-light" type="email" placeholder="Email Address" aria-label="Email Address">
+          <button class="btn btn-dark rounded-end rounded-0" type="submit">Subscribe</button></li>
+      </ul>
+    </div>
+
+   </div>
+
+
+</section>
+<!-- ======carousel====== -->
+<section class="fancy">
+
+  <div class="carousel">
+    <div class="carousel-item">
+        <div class="slide-image"
+            style="background-image: 
+url('https://media.geeksforgeeks.org/img-practice/banner/mern-full-stack-development-classroom-thumbnail.png?v=19625');">
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="slide-image"
+            style="background-image: 
+url('https://media.geeksforgeeks.org/img-practice/banner/dsa-to-development-coding-guide-thumbnail.png?v=19625');">
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="slide-image"
+            style="background-image: 
+url('https://media.geeksforgeeks.org/img-practice/banner/geeks-classes-live-thumbnail.png?v=19625');">
+        </div>
+    </div>
+    <div class="carousel-item">
+        <div class="slide-image"
+            style="background-image: 
+url('https://media.geeksforgeeks.org/img-practice/banner/gate-crash-course-2024-thumbnail.png?v=19625');">
+        </div>
+    </div>
+</div>
+  </section>
+<!-- ===== media container ==== -->
+<section class="media">
+    <!-- Media Container -->
+    <div class="media-container">
+      <!-- YouTube Video Embed with Controls -->
+      <iframe width="49%" height="500" src="https://www.youtube.com/embed/hkBhJxZupeE?controls=1&autoplay=1" 
+        frameborder="0" allow="accelerometer; autoplay; gyroscope; picture-in-picture" allowfullscreen>
+      </iframe>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+<div class="svgicons"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="25px" height="25px" x="0" y="0" viewBox="0 0 476.213 476.213" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M476.213 223.107H57.427l94.393-94.394-21.213-21.213L0 238.106l130.607 130.608L151.82 347.5l-94.393-94.393h418.786z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg></div>
+
+
+
+<script src="main.js"></script>
+</body>
+</html>
